@@ -26,4 +26,14 @@ class IndexController extends Yaf_Controller_Abstract {
 		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板
         return TRUE;
 	}
+
+	public function getinfosbybookAction(){
+		$book=$this->getRequest()->get("book");
+		$model=new HjlistModel();
+		$rst=$model->getInfosByBook($book);
+		var_dump($rst);
+		$this->getView()->assign("book", $book);
+		// echo $book;
+		return TRUE;
+	}
 }
