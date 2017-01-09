@@ -37,4 +37,11 @@ class IndexController extends Yaf_Controller_Abstract {
 		// echo $book;
 		return TRUE;
 	}
+
+	public function medooAction(){
+		$model=new WeiboModel();
+		$rst=$model->base();
+		$this->getView()->assign("rst", $rst);
+		return TRUE;
+	}
 }
