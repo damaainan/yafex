@@ -17,37 +17,32 @@ class baseModel{
     //构造函数
     public function __construct($db_config = array())    {
         if(empty($db_config)){
-            $db_config = Yaf_Application::app()->getConfig()->db;
+            $db_config = Yaf_Application::app()->getConfig()->database;
         }
-        $this->link = $this->connect($db_config["host"], $db_config["username"], $db_config["password"], $db_config["database"]);
+        // var_dump($db_config);
+        $this->link = $this->connect($db_config['config']["host"], $db_config['config']["user"], $db_config['config']["pwd"], $db_config['config']["name"]);
     }
     //数据库连接
     public function connect($dbhost, $dbuser, $dbpw, $dbname, $charset = 'utf8')    {
-        $this->link = @mysqli_connect($dbhost, $dbuser, $dbpw, $dbname);
-        if (!$this->link)       {
-            return "database error:" . mysqli_connect_errno();
-        }
-        if (!@mysqli_select_db($this->link, $dbname))        {
-            return 'database error';
-        }
-        mysqli_query($this->link,"set names " . $charset);
+        $pdo=new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8",$dbuser,$dbpw);
+        $pdo->exec('set names utf8');
+        $this->link = $pdo;
         return $this->link;
     }
     //查询
     public function query($sql)   {
-        $query = mysqli_query($this->link, $sql);
+        $stmt=$this->link->prepare($sql);
+        $stmt->execute();
+        $query = $stmt->fetch(PDO::FETCH_ASSOC);
         return $query;
     }
     //获取全部记录
-    public function get_all($sql,$result_type = MYSQL_ASSOC) {
-        $query = $this->query($sql);
-        $i = 0;
-        $rt = array();
-        while($row =& mysqli_fetch_array($query,$result_type)) {
-            $rt[$i]=$row;
-            $i++;
-        }
-        return $rt;
+    public function get_all($sql) {
+        $stmt=$this->link->prepare($sql);
+        var_dump($sql);
+        $stmt->execute();
+        $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $query;
     }
     public function add($data = array()){
         return true;

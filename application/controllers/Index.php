@@ -28,10 +28,11 @@ class IndexController extends Yaf_Controller_Abstract {
 	}
 
 	public function getinfosbybookAction(){
+		//index.php/Index/getinfosbybook?book=""
 		$book=$this->getRequest()->get("book");
 		$model=new HjlistModel();
 		$rst=$model->getInfosByBook($book);
-		var_dump($rst);
+		// var_dump($rst);
 		$this->getView()->assign("book", $book);
 		// echo $book;
 		return TRUE;
