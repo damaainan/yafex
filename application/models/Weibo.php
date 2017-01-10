@@ -13,4 +13,15 @@ class WeiboModel extends medooModel{
         return $rest;
     }
 
+
+    public function allTags(){
+        $medoo=new medooModel();
+        $database=$medoo->database;
+        $stmt=$database->pdo->prepare("select distinct(rAuthor) as author from weibo");
+        $stmt->execute();
+        $rest=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rest;
+    }
+
+
 }
