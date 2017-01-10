@@ -38,10 +38,14 @@ class IndexController extends Yaf_Controller_Abstract {
 		return TRUE;
 	}
 
-	public function medooAction(){
+	public function weibolistAction(){
+		$name=$this->getRequest()->get("name");
 		$model=new WeiboModel();
-		$rst=$model->base();
+		if(!$name)
+			$name="*";
+		$rst=$model->base($name);
 		$this->getView()->assign("rst", $rst);
-		return TRUE;
+		// $this->getView()->display('index/weibolist.phtml');
+		// return TRUE;
 	}
 }

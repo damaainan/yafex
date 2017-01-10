@@ -1,17 +1,8 @@
 <?php
-
-
 /**
- * Eloquent ORM
- * medoo
- * 使用这两种 ORM 
+ * 原生PDO实现的数据库操作
  */
 
-/*
- $pdo=new PDO('mysql:host=rds2ejubbjnfnqb.mysql.rds.aliyuncs.com;dbname=fenghui_video;charset=utf8','fhvideo','vista688',$options);
-  $stmt=$pdo->prepare("SELECT * FROM wish_gift_pride_record WHERE type=1 ;");
-  $stmt->execute();
- **/
 class baseModel{
     protected $link;
     //构造函数
@@ -26,20 +17,21 @@ class baseModel{
     public function connect($dbhost, $dbuser, $dbpw, $dbname, $charset = 'utf8')    {
         $pdo=new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8",$dbuser,$dbpw);
         $pdo->exec('set names utf8');
-        $this->link = $pdo;
-        return $this->link;
+        return $pdo;
     }
     //查询
     public function query($sql)   {
-        $stmt=$this->link->prepare($sql);
+        $pdo=$this->link;
+        $stmt=$pdo->prepare($sql);
         $stmt->execute();
         $query = $stmt->fetch(PDO::FETCH_ASSOC);
         return $query;
     }
     //获取全部记录
     public function get_all($sql) {
-        $stmt=$this->link->prepare($sql);
-        var_dump($sql);
+        $pdo=$this->link;
+        $stmt=$pdo->prepare($sql);
+        // var_dump($sql);
         $stmt->execute();
         $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $query;

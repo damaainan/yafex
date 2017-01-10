@@ -1,6 +1,10 @@
 <?php 
 require APPLICATION_PATH."/application/library/medoo.php";
 
+/**
+ * medoo ORM 实现的数据库操作
+ */
+
 class medooModel{//取名 model 是为了区别原类
      public $database;
      public function __construct(){
