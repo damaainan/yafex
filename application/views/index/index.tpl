@@ -1,3 +1,2 @@
-
-<{$content}>, " I am ", <{$name}>
+<{$content}>, " I am ", <{$name}>;
 

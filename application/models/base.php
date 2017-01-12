@@ -3,14 +3,16 @@
  * 原生PDO实现的数据库操作
  */
 
+
+
 class baseModel{
     protected $link;
     //构造函数
     public function __construct($db_config = array())    {
         if(empty($db_config)){
-            $db_config = Yaf_Application::app()->getConfig()->database;
+            $db_config = \Yaf\Application::app()->getConfig()->database;
         }
-        // var_dump($db_config);
+        // var_dump($db_config['config']["host"]);
         $this->link = $this->connect($db_config['config']["host"], $db_config['config']["user"], $db_config['config']["pwd"], $db_config['config']["name"]);
     }
     //数据库连接
@@ -30,6 +32,7 @@ class baseModel{
     //获取全部记录
     public function get_all($sql) {
         $pdo=$this->link;
+        // var_dump($sql);
         $stmt=$pdo->prepare($sql);
         // var_dump($sql);
         $stmt->execute();

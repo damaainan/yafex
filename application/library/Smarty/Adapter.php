@@ -1,12 +1,12 @@
 <?php
-Yaf_Loader::import( "Smarty/Smarty.class.php");
-Yaf_Loader::import( "Smarty/sysplugins/smarty_internal_templatecompilerbase.php");
-Yaf_Loader::import( "Smarty/sysplugins/smarty_internal_templatelexer.php");
-Yaf_Loader::import( "Smarty/sysplugins/smarty_internal_templateparser.php");
-Yaf_Loader::import( "Smarty/sysplugins/smarty_internal_compilebase.php");
-Yaf_Loader::import( "Smarty/sysplugins/smarty_internal_write_file.php");
+\Yaf\Loader::import( "Smarty/Smarty.class.php");
+\Yaf\Loader::import( "Smarty/sysplugins/smarty_internal_templatecompilerbase.php");
+\Yaf\Loader::import( "Smarty/sysplugins/smarty_internal_templatelexer.php");
+\Yaf\Loader::import( "Smarty/sysplugins/smarty_internal_templateparser.php");
+\Yaf\Loader::import( "Smarty/sysplugins/smarty_internal_compilebase.php");
+\Yaf\Loader::import( "Smarty/sysplugins/smarty_internal_write_file.php");
 
-class Smarty_Adapter implements Yaf_View_Interface
+class Smarty_Adapter implements \Yaf\View_Interface
 {
     /**
      * Smarty object

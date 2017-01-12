@@ -1,5 +1,5 @@
 <?php 
-class WeiboModel extends medooModel{
+class WeiboModel extends \medooModel{
     public $tableName = 'weibo';
     public function base($name){
         $medoo=new medooModel();

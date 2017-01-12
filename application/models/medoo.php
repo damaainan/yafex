@@ -1,6 +1,6 @@
 <?php 
-require APPLICATION_PATH."/application/library/medoo.php";
-
+// require APPLICATION_PATH."/application/library/medoo.php";
+require 'vendor/autoload.php';
 /**
  * medoo ORM 实现的数据库操作
  */
@@ -10,7 +10,7 @@ class medooModel{//取名 model 是为了区别原类
      public function __construct(){
 
 
-         $db_config = Yaf_Application::app()->getConfig()->database;
+         $db_config = \Yaf\Application::app()->getConfig()->database;
          $dbhost=$db_config['config']["host"];
          $dbuser=$db_config['config']["user"];
          $dbpwd=$db_config['config']["pwd"];

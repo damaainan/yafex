@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>作者列表</title>
-    <link rel="stylesheet" type="text/css" href="<{#APPLICATION_PATH#}>/public/bootstrap/css/bootstrap.min.css">
-    <script src="<{#APPLICATION_PATH#}>/public/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container">
-<ul class="list-group">
-    <{foreach from=$rst item=value}>
-        <li class="list-group-item"><a href="http://<{$smarty.server.SERVER_NAME}>/index.php/weibo/weibolist?name=<{$value.author}>"> <{$value.author}></a></li>
-    <{/foreach}>
-    </ul>
-    </div>
-</body>
-</html>
+<{extends file="base.tpl"/}>
+<!-- smarty2 不支持继承  smarty3 集成未实现 -->
+<{block name="title"}>作者列表<{/block}>
+	<{block name="content"}>
+	<ul class="list-group">
+	    <{foreach from=$rst item=value}>
+	        <li class="list-group-item"><a href="http://<{$smarty.server.HTTP_HOST}><{$smarty.server.SCRIPT_NAME}>/weibo/weibolist?name=<{$value.author}>"> <{$value.author}></a></li>
+	    <{/foreach}>
+	</ul>
+<{/block}>

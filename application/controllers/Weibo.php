@@ -1,5 +1,5 @@
 <?php 
-class WeiboController extends Yaf_Controller_Abstract {
+class WeiboController extends \Yaf\Controller_Abstract {
 
     public function weibolistAction(){
         $name=$this->getRequest()->get("name");
