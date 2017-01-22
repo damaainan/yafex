@@ -33,7 +33,7 @@ class IndexController extends \Yaf\Controller_Abstract {
 		$model=new HjlistModel();
 		$rst=$model->getInfosByBook($book);
 		// var_dump($rst);
-		var_dump(APPLICATION_PATH);
+		// var_dump(APPLICATION_PATH);
 		$this->getView()->assign("book", $book);
 		$this->getView()->assign("rst", $rst);
 		// echo $book;

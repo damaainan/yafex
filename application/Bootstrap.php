@@ -13,6 +13,9 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract {
 		//把配置保存起来
 		$arrConfig = \Yaf\Application::app()->getConfig();
 		\Yaf\Registry::set('config', $arrConfig);
+
+		// 关闭自动加载模板
+		\Yaf\Dispatcher::getInstance()->autoRender(FALSE);
 	}
 
 	public function _initPlugin(\Yaf\Dispatcher $dispatcher) {
