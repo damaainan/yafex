@@ -37,4 +37,13 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract {
         $smarty = new Smarty_Adapter(null , \Yaf\Application::app()->getConfig()->smarty);  
         \Yaf\Dispatcher::getInstance()->setView($smarty);  
     } 
+    // 初始化 Eloquent ORM
+    public function _initDefaultDbAdapter(\Yaf\Dispatcher $dispatcher)
+    {
+        $capsule = new Capsule();
+       $capsule->addConnection(\Yaf\Application::app()->getConfig()->database->toArray());
+        $capsule->setEventDispatcher(new LDispatcher(new LContainer));
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
+    }
 }

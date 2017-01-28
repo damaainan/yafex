@@ -1,1 +1,4 @@
 application/views/cache/
+vendor/
+composer.json
+composer.lock
