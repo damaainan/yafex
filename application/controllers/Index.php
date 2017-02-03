@@ -36,7 +36,8 @@ class IndexController extends \Yaf\Controller_Abstract {
 		// var_dump(APPLICATION_PATH);
 		$this->getView()->assign("book", $book);
 		$this->getView()->assign("rst", $rst);
+		$this->display("getinfosbybook");
 		// echo $book;
-		return TRUE;
+		// return TRUE;
 	}
 }

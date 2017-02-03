@@ -1,13 +1,7 @@
 {
     
     "require": {
-        "php":" >=5.5.9",
-        "illuminate/container":" 5.2.*",
-        "illuminate/contracts":" 5.2.*",
-        "illuminate/database":"v5.2.*",
-        "illuminate/events":"v5.2.*",
-        "illuminate/support":" 5.2.*",
-        "nesbot/carbon":" ~1.20",
+        
         "catfan/Medoo": "^1.1"
     },
     "repositories": {

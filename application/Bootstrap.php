@@ -7,6 +7,9 @@
  * 这些方法, 都接受一个参数:Yaf_Dispatcher $dispatcher
  * 调用的次序, 和申明的次序相同
  */
+// use Illuminate\Events\Dispatcher as LDispatcher;
+// use Illuminate\Container\Container as LContainer;
+// use Illuminate\Database\Capsule\Manager as Capsule;
 class Bootstrap extends \Yaf\Bootstrap_Abstract {
 
     public function _initConfig() {
@@ -38,12 +41,12 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract {
         \Yaf\Dispatcher::getInstance()->setView($smarty);  
     } 
     // 初始化 Eloquent ORM
-    public function _initDefaultDbAdapter(\Yaf\Dispatcher $dispatcher)
-    {
-        $capsule = new Capsule();
-       $capsule->addConnection(\Yaf\Application::app()->getConfig()->database->toArray());
-        $capsule->setEventDispatcher(new LDispatcher(new LContainer));
-        $capsule->setAsGlobal();
-        $capsule->bootEloquent();
-    }
+    // public function _initDefaultDbAdapter(\Yaf\Dispatcher $dispatcher)
+    // {
+    //     $capsule = new Capsule();
+    //    $capsule->addConnection(\Yaf\Application::app()->getConfig()->database->toArray());
+    //     $capsule->setEventDispatcher(new LDispatcher(new LContainer));
+    //     $capsule->setAsGlobal();
+    //     $capsule->bootEloquent();
+    // }
 }

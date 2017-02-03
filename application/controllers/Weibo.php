@@ -8,6 +8,7 @@ class WeiboController extends \Yaf\Controller_Abstract {
             $name="*";
         $rst=$model->base($name);
         $this->getView()->assign("rst", $rst);
+        $this->display('weibolist');
         // $this->getView()->display('index/weibolist.phtml');
         // return TRUE;
     }
@@ -15,7 +16,11 @@ class WeiboController extends \Yaf\Controller_Abstract {
     public function weibotagsAction(){
         $model=new WeiboModel();
         $rst=$model->allTags();
+
+        // var_dump($rst);
+        // echo 222;
         $this->getView()->assign("rst", $rst);
+        $this->display('weibotags');//输出模板的方式
     }
 
 }
