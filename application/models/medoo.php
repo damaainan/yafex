@@ -1,6 +1,6 @@
 <?php 
 // require APPLICATION_PATH."/application/library/medoo.php";
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
 /**
  * medoo ORM 实现的数据库操作
  */

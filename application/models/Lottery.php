@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LotteryModel extends EloquentModel
+class Lottery extends EloquentModel
 {
     // 软删除
     // use SoftDeletes;
@@ -13,8 +12,8 @@ class LotteryModel extends EloquentModel
     protected  $table = 'lottery';
 
     // 此字段自动转换成 Carbon 实例
-    // protected $dates = ['deleted_at'];
+    protected $dates = ['qihao'];
 
     // 允许批量赋值的字段
-    // protected $fillable = ['name', 'password', 'email'];
+    protected $fillable = ['qihao'];
 }
