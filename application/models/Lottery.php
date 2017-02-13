@@ -3,8 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Lottery extends EloquentModel
-{
+class Lottery extends EloquentModel{
     // 软删除
     // use SoftDeletes;
 

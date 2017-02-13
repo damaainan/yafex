@@ -5,6 +5,7 @@
  * @desc 默认控制器
  * @see http://www.php.net/manual/en/class.yaf-controller-abstract.php
  */
+use App\Models\Hjlist;
 class IndexController extends \Yaf\Controller_Abstract {
 
 	/** 
@@ -30,8 +31,13 @@ class IndexController extends \Yaf\Controller_Abstract {
 	public function getinfosbybookAction(){
 		//index.php/Index/getinfosbybook?book=""
 		$book=$this->getRequest()->get("book");
+
+		/*
 		$model=new HjlistModel();
 		$rst=$model->getInfosByBook($book);
+*/
+		$rst=Hjlist::where("book","=",$book)->get()->toArray();
+
 		// var_dump($rst);
 		// var_dump(APPLICATION_PATH);
 		$this->getView()->assign("book", $book);
