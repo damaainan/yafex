@@ -15,4 +15,6 @@ return array(
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'App\\Models\\' => array($baseDir . '/application/models'),
+    'App\\Controllers\\' => array($baseDir . '/application/controllers'),
 );

@@ -17,6 +17,8 @@
         }
     }
     ,"autoload": {
-        "App\\Models\\": "application/models"
+        "psr-4": {
+            "App\\Models\\": "application/models",
+        }
     }
 }

@@ -48,5 +48,17 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract {
         $capsule->setEventDispatcher(new LDispatcher(new LContainer));
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
+
+        //  $capsule = new Capsule;
+        // // 创建默认链接
+        // $capsule->addConnection(\Yaf\Application::app()->getConfig()->database->toArray());
+        // // biz业务链接
+        // // $capsule->addConnection(Yaf_Application::app()->getConfig()->biz->toArray(), 'biz');
+        // // 设置全局静态可访问
+        // $capsule->setAsGlobal();
+        // // 启动Eloquent
+        // $capsule->bootEloquent();
+        // // define('DT', 'dt');
+        // // $capsule::connection('dt')->enableQueryLog();
     }
 }

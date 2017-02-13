@@ -12,8 +12,8 @@ class Lottery extends EloquentModel
     protected  $table = 'lottery';
 
     // 此字段自动转换成 Carbon 实例
-    protected $dates = ['qihao'];
+    // protected $dates = ['qihao'];
 
     // 允许批量赋值的字段
-    protected $fillable = ['qihao'];
+    // protected $fillable = ['qihao'];
 }

@@ -2,5 +2,10 @@
 <!-- 引入其他文件夹文件方式 -->
 <{block name="title"}>作者列表<{/block}>
 <{block name="content"}>
- 12233
+  <ul class="list-group">
+  <!-- <{$rst['qihao']}> -->
+  <{foreach key=key item=item from=$rst}>
+  <li class="list-group-item"><{$key}>: <{$item}></li>
+ <{/foreach}>
+ </ul>
 <{/block}>  
