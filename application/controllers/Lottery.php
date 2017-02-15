@@ -5,7 +5,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class LotteryController extends \Yaf\Controller_Abstract{
     public function indexAction(){
-        // $lottery= new Lottery();
+        $lottery= new Lottery();
         // var_dump($lottery);
 
         // 获取
