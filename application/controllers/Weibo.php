@@ -30,8 +30,8 @@ class WeiboController extends \Yaf\Controller_Abstract {
         $rst=Weibo::select('rAuthor as author')->distinct()->get()->toArray();
 
 
-        // var_dump($rst);
-        // echo 222;
+         // var_dump($rst);
+         // echo 222;
         $this->getView()->assign("rst", $rst);
         $this->display('weibotags');//输出模板的方式
     }

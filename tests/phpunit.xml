@@ -1,7 +1,10 @@
 <phpunit bootstrap="./index.php">
     <testsuites>
-        <testsuite name="controllers">
+        <!-- <testsuite name="controllers">
             <file>./controllers/TestIndex.php</file>
+        </testsuite> -->
+        <testsuite name="controllers">
+            <directory>./controllers</directory>
         </testsuite>
     </testsuites>
 </phpunit>

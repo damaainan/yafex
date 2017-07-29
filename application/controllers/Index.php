@@ -14,6 +14,7 @@ class IndexController extends \Yaf\Controller_Abstract {
      * 对于如下的例子, 当访问http://yourhost/yafns/index/index/index/name/jia 的时候, 你就会发现不同
      */
 	public function indexAction($name = "Stranger") {
+		// var_dump(get_defined_constants());
 		//1. fetch query
 		$get = $this->getRequest()->getQuery("get", "default value");
 

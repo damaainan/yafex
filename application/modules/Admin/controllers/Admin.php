@@ -6,7 +6,7 @@ class AdminController extends \Yaf\Controller_Abstract
      * @doc
      * @DateTime 2017-01-22T18:02:08+0800
      */
-    public function indexAction()
+    public function indexAction() // 地址  yafex/index.php/Admin/Admin/index
     {
         echo "fdfd";
         var_dump($this->getView()->getScriptPath()); //获取当前模板路径
