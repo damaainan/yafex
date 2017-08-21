@@ -18,6 +18,44 @@ class AdminController extends \Yaf\Controller_Abstract
         // return TRUE;
     }
 
+
+    /**
+     * @SWG\Get(
+     *     path="/Admin/Admin/testlibrary",
+     *     description="测试类库的加载",
+     *     operationId="testlibrary",
+     *     produces={"application/json", "application/xml", "text/xml", "text/html"},
+     *     @SWG\Parameter(
+     *         name="tags",
+     *         in="query",
+     *         description="tags to filter by",
+     *         required=false,
+     *         type="array",
+     *         @SWG\Items(type="string"),
+     *         collectionFormat="csv"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="limit",
+     *         in="query",
+     *         description="maximum number of results to return",
+     *         required=false,
+     *         type="integer",
+     *         format="int32"
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="pet response",
+     *         @SWG\Schema(type="object",ref="#/definitions/Pet"),
+     *     ),
+     *     @SWG\Response(
+     *         response="default",
+     *         description="unexpected error",
+     *         @SWG\Schema(
+     *             ref="#/definitions/ErrorModel"
+     *         )
+     *     )
+     * )
+     */
     public function testlibraryAction()
     {
         // echo "fdfd";

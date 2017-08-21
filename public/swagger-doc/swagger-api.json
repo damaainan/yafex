@@ -1,0 +1,169 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "\u7b2c\u4e00\u79cd\u6d4b\u8bd5-modules",
+        "description": "\u63cf\u8ff0\u6587\u6863",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Swagger API Team"
+        },
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
+    },
+    "host": "www.localhost2.com",
+    "basePath": "/yafex/index.php",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/Admin/Admin/testlibrary": {
+            "get": {
+                "description": "\u6d4b\u8bd5\u7c7b\u5e93\u7684\u52a0\u8f7d",
+                "operationId": "testlibrary",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/xml",
+                    "text/html"
+                ],
+                "parameters": [
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "tags to filter by",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "pet response",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/Pet"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/Api/Index/test": {
+            "get": {
+                "description": "\u65b9\u6cd5\u63cf\u8ff0",
+                "operationId": "test",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "\u53c2\u65701",
+                        "in": "path",
+                        "description": "\u53c2\u65701\u63cf\u8ff0",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "pet response",
+                        "schema": {
+                            "$ref": "#/definitions/Pet"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorModel"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ErrorModel": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "NewPet": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "Pet": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/NewPet"
+                },
+                {
+                    "required": [
+                        "id"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "tags": [
+        {
+            "name": "\u6807\u7b7e",
+            "description": "\u6807\u7b7e\u63cf\u8ff0"
+        }
+    ]
+}
