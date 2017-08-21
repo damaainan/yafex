@@ -1,0 +1,61 @@
+[common]
+application.directory = APPLICATION_PATH  "/application"
+application.dispatcher.catchException = TRUE
+
+
+;数据库驱动类型
+database.config.type='mysql'
+;服务器地址
+database.config.host='localhost'
+;数据库名
+database.config.name='yafex'
+;用户名
+database.config.user='root'
+;密码
+database.config.pwd='navicat123=P'
+;端口
+database.config.port= '3306'
+;启用字段缓存
+;database.config.fields_cache=false
+;数据库编码默认采用utf8
+;database.config.charset='utf8'
+;数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+;database.config.deploy_type=1
+;数据库读写是否分离 主从式有效
+;database.config.rw_separate=true
+;读写分离后 主服务器数量
+;database.config.master_num=1
+;指定从服务器序号
+;database.config.slave_no=''
+
+
+
+; database
+database.driver     = mysql
+database.host       = 127.0.0.1
+database.database   = yafex
+database.username   = root
+database.password   = 'navicat123=P'
+database.port       = 3306
+database.charset    = utf8
+database.collation  = utf8_unicode_ci
+database.prefix     = ""
+
+
+application.view.ext="tpl"
+smarty.left_delimiter   = "<{"    
+smarty.right_delimiter  = "}>"    
+smarty.template_dir     = APPLICATION_PATH "/application/views/"  
+smarty.compile_dir      = APPLICATION_PATH "/application/views/cache/compile"  
+smarty.cache_dir        = APPLICATION_PATH "/application/views/cache/"  
+
+
+; 配置多模块
+; 不能自动实现
+; Index默认的模块
+; Api模块用于手机应用的数据接口
+; Admin模块用于后台管理
+application.modules = Index,Api,Admin
+
+
+[product : common]
