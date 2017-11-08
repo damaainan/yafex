@@ -4,3 +4,4 @@ composer.lock
 .idea/
 xhgui/
 .htaccess
+vendor/composer/*.php
