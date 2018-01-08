@@ -1,10 +1,11 @@
 <phpunit bootstrap="./index.php">
     <testsuites>
-        <!-- <testsuite name="controllers">
-            <file>./controllers/TestIndex.php</file>
-        </testsuite> -->
         <testsuite name="controllers">
-            <directory>./controllers</directory>
+            <file>./controllers/TestIndex.php</file>
         </testsuite>
+        <!--  下方目录写法 不执行 -->
+        <!-- <testsuite name="controllers">
+            <directory>./controllers</directory>
+        </testsuite> -->
     </testsuites>
 </phpunit>
