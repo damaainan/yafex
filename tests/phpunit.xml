@@ -1,11 +1,13 @@
 <phpunit bootstrap="./index.php">
     <testsuites>
-        <testsuite name="controllers">
+        <!-- 单文件写法  -->
+       <!--  <testsuite name="controllers">
             <file>./controllers/TestIndex.php</file>
-        </testsuite>
-        <!--  下方目录写法 不执行 -->
-        <!-- <testsuite name="controllers">
-            <directory>./controllers</directory>
+            <file>./controllers/TestGame.php</file>
         </testsuite> -->
+        <!--  目录写法 写明后缀  也可以指定 php执行版本 例如 phpVersion="5.3.0" phpVersionOperator=">=" -->
+        <testsuite name="controllers">
+            <directory suffix=".php">./controllers</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
