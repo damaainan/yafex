@@ -25,11 +25,44 @@ class GameController extends \Yaf\Controller_Abstract
     }
 
     // index.php/Api/Game/getJsonLottery
-    public function getJsonLotteryAction($uid){
+    // 
+    /**
+     * @SWG\Get(
+     *     path="/Api/Game/getJsonLottery",
+     *     description="获取一条数据的json 格式",
+     *     operationId="getJsonLottery",
+     *     @SWG\Parameter(
+     *         description="数据 id",
+     *         format="int",
+     *         in="path",
+     *         name="id",
+     *         required=false,
+     *         type="integer"
+     *     ),
+     *     produces={
+     *         "application/json",
+     *         "application/xml",
+     *         "text/html",
+     *         "text/xml"
+     *     },
+     *     @SWG\Response(
+     *         response=200,
+     *         description="pet response",
+     *         @SWG\Schema(ref="#/definitions/Pet")
+     *     ),
+     *     @SWG\Response(
+     *         response="default",
+     *         description="unexpected error",
+     *         @SWG\Schema(ref="#/definitions/ErrorModel")
+     *     )
+     * )
+     */
+    public function getJsonLotteryAction($id = 1){
         // if ( $uid < 1 ) 
         // $this->__responseJson(-1);
         $lottery= new Lottery();
-        $ret = $lottery::find(1)->toArray();
+        $ret = $lottery::find($id)->toArray();
+        // echo json_encode($ret);
         $this->__responseJson($ret);
         // print_r($ret);
     }

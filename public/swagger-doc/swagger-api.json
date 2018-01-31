@@ -1,19 +1,19 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "\u7b2c\u4e00\u79cd\u6d4b\u8bd5-modules",
-        "description": "\u63cf\u8ff0\u6587\u6863",
+        "title": "\u7b2c\u4e00\u79cd\u6d4b\u8bd5-\u591a\u6a21\u5757",
+        "description": "Api \u6587\u6863 ",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Swagger API Team"
+            "name": "yafex"
         },
         "license": {
             "name": "MIT"
         },
         "version": "1.0.0"
     },
-    "host": "www.localhost2.com",
-    "basePath": "/yafex/index.php",
+    "host": "www.yaftest.com",
+    "basePath": "/index.php",
     "schemes": [
         "http"
     ],
@@ -60,6 +60,42 @@
                         "description": "pet response",
                         "schema": {
                             "type": "object",
+                            "$ref": "#/definitions/Pet"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/Api/Game/getJsonLottery": {
+            "get": {
+                "description": "\u83b7\u53d6\u4e00\u6761\u6570\u636e\u7684json \u683c\u5f0f",
+                "operationId": "getJsonLottery",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "\u6570\u636e id",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "pet response",
+                        "schema": {
                             "$ref": "#/definitions/Pet"
                         }
                     },

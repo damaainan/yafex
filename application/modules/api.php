@@ -2,17 +2,17 @@
 
 /**
  * @SWG\Swagger(
- *     basePath="/yafex/index.php",
- *     host="www.localhost2.com",
+ *     basePath="/index.php",
+ *     host="www.yaftest.com",
  *     schemes={"http"},
  *     produces={"application/json"},
  *     consumes={"application/json"},
  *     @SWG\Info(
  *         version="1.0.0",
- *         title="第一种测试-modules",
- *         description="描述文档",
+ *         title="第一种测试-多模块",
+ *         description="Api 文档 ",
  *         termsOfService="http://swagger.io/terms/",
- *         @SWG\Contact(name="Swagger API Team"),
+ *         @SWG\Contact(name="yafex"),
  *         @SWG\License(name="MIT")
  *     ),
  *     @SWG\Definition(

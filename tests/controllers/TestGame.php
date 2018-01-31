@@ -11,6 +11,7 @@ class TestGame extends PHPUnit\Framework\TestCase {
     private function __requestActionAndParseBody($action, $params=array()) {
         $request = new \Yaf\Request\Simple("CLI", "Api", "Game", $action, $params);
         $response = \Yaf\Application::app()->getDispatcher()->returnResponse(TRUE)->dispatch($request);
+        // var_dump($response);
         return $response->getBody();
     }
 
@@ -32,7 +33,8 @@ class TestGame extends PHPUnit\Framework\TestCase {
         // var_dump($res);
         
 
-        $response = $this->__requestActionAndParseBody('getJsonLottery', array('uid'=>1));
+        // Error: Call to a member function getBody() on boolean 报错 未开服务器
+        $response = $this->__requestActionAndParseBody('getJsonLottery', array('id'=>1));
         // var_dump($response);
         $data     = json_decode($response, TRUE);
         $this->assertInternalType('array', $data);
