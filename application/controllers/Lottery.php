@@ -18,4 +18,22 @@ class LotteryController extends \Yaf\Controller_Abstract{
         $this->getView()->assign("rst", $user);
         $this->display('index');
     }
+    public function testChartAction(){
+        $this->display('testChart');
+    }
+    public function testChart1Action(){
+        $this->display('testChart1');
+    }
+    public function testChart2Action(){
+        $this->display('testChart2');
+    }
+    public function testChart3Action(){
+        $this->display('testChart3');
+    }
+    public function testChart4Action(){
+        $this->display('testChart4');
+    }
+    public function testChart5Action(){
+        $this->display('testChart5');
+    }
 }
